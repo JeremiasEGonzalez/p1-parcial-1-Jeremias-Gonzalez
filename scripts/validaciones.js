@@ -93,15 +93,16 @@ function validarNombreCancion(){
 
 function validarDuracionCancion(){
 
+  
     let datoInvalido = false;
-    let nombre;
+    let numero;
     do{
 
-        nombre = prompt('Ingrese nombre de la Cancion');
+        numero = parseInt(prompt('Ingrese la duracion de la cancion en segundos.'));
 
-        if(nombre == "" || nombre === undefined || nombre == NaN || nombre == null || !isNaN(nombre)){
+        if(numero == "" || numero === undefined || numero == NaN || numero == null || isNaN(numero)){
             datoInvalido = true;
-            alert("Hubo un error al cargar el nombre de la Cancion");
+            alert("Hubo un error al cargar el numero de codigo del Disco");
 
         }else{
             datoInvalido = false;
@@ -109,7 +110,7 @@ function validarDuracionCancion(){
 
     }while(datoInvalido)
 
-    return nombre;
+    return numero;
 
 
     

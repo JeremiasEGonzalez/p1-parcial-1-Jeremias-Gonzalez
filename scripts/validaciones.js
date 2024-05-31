@@ -59,6 +59,11 @@ function validarID(){
 
         numero = prompt('Ingrese un codigo para el Disco de 3 cifras. Ej: 123');
 
+        if(numero === "" ){
+            alert("no puede estar vacio")
+            validarID();
+        }
+
         if(!isNaN(numero)){
             numero = parseInt(numero);
         }else{
@@ -68,7 +73,7 @@ function validarID(){
 
         
 
-        if(numero === "" || numero === undefined || numero == NaN || numero == null){
+        if(numero === undefined || numero == null){
             datoInvalido = true;
             alert("Hubo un error al cargar el numero de codigo del Disco");
 
@@ -130,6 +135,11 @@ function validarDuracionCancion(){
 
         numero = prompt('Ingrese la duracion de la cancion en segundos.');
 
+        if(numero === "" ){
+            alert("no puede estar vacio")
+            validarDuracionCancion();
+        }
+
         if(!isNaN(numero)){
             numero = parseInt(numero);
         }else{
@@ -137,7 +147,7 @@ function validarDuracionCancion(){
             validarDuracionCancion();
         }
 
-        if(numero === "" || numero === undefined || numero === NaN || numero === null){
+        if( numero === undefined || numero === null){
             datoInvalido = true;
             alert("Hubo un error al cargar la duracion de la cancion");
 

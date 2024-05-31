@@ -64,6 +64,8 @@ function validarID(){
             validarID();
         }
 
+
+
         if(!isNaN(numero)){
             numero = parseInt(numero);
         }else{
@@ -71,7 +73,10 @@ function validarID(){
             validarID();
         }
 
-        
+        if(numero < 0 || numero >999){
+            alert('numero fuera del rango entre 0 y 999');
+            validarID();
+        }
 
         if(numero === undefined || numero == null){
             datoInvalido = true;
@@ -144,6 +149,11 @@ function validarDuracionCancion(){
             numero = parseInt(numero);
         }else{
             alert("No es un dato numerico");
+            validarDuracionCancion();
+        }
+
+        if(numero < 0 || numero >7200 ){
+            alert('numero fuera del rango entre 0 y 7200 seg');
             validarDuracionCancion();
         }
 

@@ -1,5 +1,7 @@
 
 
+
+
 function validarNombre(){
 
     let datoInvalido = false;
@@ -45,15 +47,28 @@ function validarArtista(){
 
 }
 
+let idValidator = [];
+
 function validarID(){
 
     let datoInvalido = false;
     let numero;
     do{
 
-        numero = parseInt(prompt('Ingrese un codigo para el Disco de 3 cifras. Ej: 123'));
 
-        if(numero == "" || numero === undefined || numero == NaN || numero == null || isNaN(numero)){
+
+        numero = prompt('Ingrese un codigo para el Disco de 3 cifras. Ej: 123');
+
+        if(!isNaN(numero)){
+            numero = parseInt(numero);
+        }else{
+            alert("No es un dato numerico");
+            validarID();
+        }
+
+        
+
+        if(numero === "" || numero === undefined || numero == NaN || numero == null){
             datoInvalido = true;
             alert("Hubo un error al cargar el numero de codigo del Disco");
 
@@ -61,7 +76,19 @@ function validarID(){
             datoInvalido = false;
         }
 
+        for (let i = 0; i < idValidator.length; i++) {
+
+            if(numero === idValidator[i]){
+                alert("El id ya se ha usado");
+                validarID();
+            }
+          }
+
+          idValidator.push(numero);
+
     }while(datoInvalido)
+    
+    
 
     return numero;
 
@@ -96,13 +123,23 @@ function validarDuracionCancion(){
   
     let datoInvalido = false;
     let numero;
+
+
+
     do{
 
-        numero = parseInt(prompt('Ingrese la duracion de la cancion en segundos.'));
+        numero = prompt('Ingrese la duracion de la cancion en segundos.');
 
-        if(numero == "" || numero === undefined || numero == NaN || numero == null || isNaN(numero)){
+        if(!isNaN(numero)){
+            numero = parseInt(numero);
+        }else{
+            alert("No es un dato numerico");
+            validarDuracionCancion();
+        }
+
+        if(numero === "" || numero === undefined || numero === NaN || numero === null){
             datoInvalido = true;
-            alert("Hubo un error al cargar el numero de codigo del Disco");
+            alert("Hubo un error al cargar la duracion de la cancion");
 
         }else{
             datoInvalido = false;

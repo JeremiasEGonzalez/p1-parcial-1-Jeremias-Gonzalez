@@ -11,7 +11,7 @@ class PlayList{
             do{
                 
                 const nombreCancion = validarNombreCancion();
-                let duracion = parseInt(prompt('Ingrese duracion de la cancion'));
+                let duracion = validarDuracionCancion();
 
                 let cancion = new Cancion(nombreCancion, duracion);
                 
